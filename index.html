@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" href="image/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Facebook - Clone Coding</title>
+    <style>
+        @import url(css/default.css);
+        @import url(css/gnb.css);
+        @import url(css/main.css);
+    </style>
+    <script>
+        function showIcon() {
+            $("#search-icon").show();
+        }
+
+        function hideIcon() {
+            $("#search-icon").hide();
+        }
+
+
+        function showButton() {
+            $("#btn-post").show();
+        }
+
+        function post() {
+            alert('Posting Completed!');
+            $("#btn-post").hide();
+
+            var inputText = $("input[type='text']");
+            inputText.val('');
+        }
+
+        function menuModal() {
+            let status = $('#menu-modal').css('display')
+            if (status == 'block') {
+                $('#menu-modal').hide();
+            } else {
+                $('#menu-modal').show();
+            }
+        }
+
+        function menuModal() {
+            let modal = $('#menu-modal');
+            let menuIcon = $('#gnb-menu');
+
+            if (modal.css('display') === 'block') {
+                modal.hide();
+                menuIcon.attr('src', 'Image/gnb/6.png');
+            } else {
+                modal.show();
+                menuIcon.attr('src', 'Image/gnb/10.png');
+            }
+        }
+
+        function searchMenu() {
+            let searchText = $('#modal-search-input').val().toLowerCase();
+            $('.social li').each(function() {
+                let menuItem = $(this);
+                let text = menuItem.text().toLowerCase();
+                if (text.includes(searchText)) {
+                    menuItem.show();
+                } else {
+                    menuItem.hide();
+                }
+            });
+        }
+
+        function accountModal() {
+            let status = $('#account-modal').css('display')
+            if (status == 'block') {
+                $('account-modal').hide()
+            } else {
+                $('#account-modal').show()
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="gnb flex-row">
+        <div class="gnb-left flex-row">
+            <img width="40" src="Image/logo.png">
+            <div class="search-box flex-row">
+                <i id="search-icon" class="bi bi-search"></i>
+                <input type="text" placeholder="Dea Dwi Aryanti" onfocus="hideIcon()" onblur="showIcon()" name="" id="">
+            </div>
+        </div>
+
+        <div class="gnb-middle flex-row">
+            <div class="nav-tab flex-row">
+                <img src="Image/gnb/1.png">
+            </div>
+            <div class="nav-tab flex-row">
+                <img src="Image/gnb/2.png">
+            </div>
+            <div class="nav-tab flex-row">
+                <img src="Image/gnb/3.png">
+            </div>
+            <div class="nav-tab flex-row">
+                <img src="Image/gnb/4.png">
+            </div>
+            <div class="nav-tab flex-row">
+                <img src="Image/gnb/5.png">
+            </div>
+        </div>
+
+        <div class="gnb-right flex-row">
+            <div onclick="menuModal()" class="nav-tab-right flex-row"><img id="gnb-menu" src="Image/gnb/6.png"></div>
+            <div class="nav-tab-right flex-row"><img src="Image/gnb/7.png"></div>
+            <div class="nav-tab-right flex-row"><img src="Image/gnb/8.png"></div>
+            <div onclick="accountModal()" class="nav-tab-right flex-row"><img width="40" src="https://i.pinimg.com/564x/85/b5/be/85b5bef005a9042df4b67eb666febfda.jpg"></div>
+        </div>
+    </div>
+
+    <div class="main flex-row">
+        <div class="main-left">
+            <li class="flex-row">
+                <div class="flex-row">
+                    <img class="profile-img" src="https://i.pinimg.com/564x/85/b5/be/85b5bef005a9042df4b67eb666febfda.jpg">
+                </div>
+                <span>Dea Dwi Aryanti</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/2.png">
+                </div>
+                <span>Cari teman</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/3.png">
+                </div>
+                <span>Selamat Datang</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/4.png">
+                </div>
+                <span>Kenangan</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/5.png">
+                </div>
+                <span>Tersimpan</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/6.png">
+                </div>
+                <span>Grup</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/7.png">
+                </div>
+                <span>Video</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/8.png">
+                </div>
+                <span>Marketplace</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/9.png">
+                </div>
+                <span>Kabar</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/10.png">
+                </div>
+                <span>Acara</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/11.png">
+                </div>
+                <span>Pengelola Iklan</span>
+            </li>
+            <li class="flex-row">
+                <div>
+                    <img src="Image/feed/seemore.png">
+                </div>
+                <span>Lihat selengkapnya</span>
+            </li>
+            <hr/>
+        </div>
+
+        <div class="main-middle">
+            <div class="story">
+                <div class="story-top flex-row">
+                    <div class="flex-row">Stories</div>
+                    <div class="flex-row">Reels</div>
+                    <div class="flex-row">Rooms</div>
+                </div>
+                <div class="story-bottom flex-row">
+                    <div class="profile flex-col">
+                        <div class="profile-image"></div>
+                        <span>Create Story</span>
+                        <div class="plus flex-row">
+                            <img src="Image/feed/12.png">
+                        </div>
+                    </div>
+                    <div class="description flex-col">
+                        <li class="flex-row">
+                            <img src="Image/feed/13.png">
+                            <span>Share everyday moments with friends and family.</span>
+                        </li>
+                        <li class="flex-row">
+                            <img src="Image/feed/14.png">
+                            <span>Stories disappear after 24 hours.</span>
+                        </li>
+                        <li class="flex-row">
+                            <img src="Image/feed/15.png">
+                            <span>Replies and reactions are private.</span>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="create flex-col">
+                <div class="create-top flex-row">
+                    <div class="create-profile">
+                        <img width="40" src="https://i.pinimg.com/564x/85/b5/be/85b5bef005a9042df4b67eb666febfda.jpg">
+                    </div>
+                    <input onfocus="showButton()" type="text" placeholder="What's on your mind, Dea?">
+                </div>
+                <div class="create-bottom flex-row">
+                    <li class="flex-row">
+                        <img src="Image/feed/16.png">
+                        <span>Live video</span>
+                    </li>
+                    <li class="flex-row">
+                        <img src="Image/feed/17.png">
+                        <span>Photo/video</span>
+                    </li>
+                    <li class="flex-row">
+                        <img src="Image/feed/18.png">
+                        <span>Feeling/activity</span>
+                    </li>
+                </div>
+                <button onclick="post()" id="btn-post">Let's Post it!</button>
+            </div>
+            <div class="feed">
+                <div class="feed-top flex-row">
+                    <div class="feed-profile flex-row">
+                        <img width="40" src="https://i.pinimg.com/564x/85/b5/be/85b5bef005a9042df4b67eb666febfda.jpg">
+                    </div>
+                    <div class="feed-name flex-col">
+                        <span>DeaDwiAryanti</span>
+                        <span>Sponsored <img src="Image/feed/21.png"></span>
+                    </div>
+                    <div class="feed-more flex-row">
+                        <img src="Image/feed/20.png">
+                    </div>
+                </div>
+                <p>
+                    Emerging technology rapidly reshapes industries, fostering innovation, enhancing global connectivity. #Tech
+                </p>
+                <img src="https://i.pinimg.com/564x/ff/8a/27/ff8a27f2d0ecda3a6d563cd701279f15.jpg">
+                <div class="feed-like flex-row">
+                    <img src="Image/feed/23.png">
+                    <span class="like-count">9.6K</span>
+                    <span>7.896 Shares</span>
+                </div>
+                <div class="feed-buttons flex-row">
+                    <li class="flex-row">
+                        <img width="24" src="Image/feed/24.png">
+                        <span>Like</span>
+                    </li>
+                    <li class="flex-row">
+                        <img width="24" src="Image/feed/25.png">
+                        <span>Comment</span>
+                    </li>
+                    <li class="flex-row">
+                        <img width="24" src="Image/feed/26.png">
+                        <span>Share</span>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-modal" id="menu-modal">
+        <span>Menu</span>
+        <div class="content flex-row">
+            <div class="social flex-col">
+                <div class="modal-search-box flex-row">
+                    <i id="search-icon" class="bi bi-search"></i>
+                    <input type="text" id="modal-search-input" placeholder="Search Menu" onkeyup="searchMenu()">
+                </div>
+                <span>Social</span>
+                <li class="flex-row">
+                    <img width="36" src="Image/modal/1.png">
+                    <div class="flex-col">
+                        <span>Events</span>
+                        <p>Organize or find events and other things to do online and nearby.</p>
+                    </div>
+                </li>
+                <li class="flex-row" id="find-friends">
+                    <img width="36" src="Image/modal/2.png">
+                    <div class="flex-col">
+                        <span>Find friends</span>
+                        <p>Search for friends or people you may know.</p>
+                    </div>
+                </li>
+                <li class="flex-row">
+                    <img width="36" src="Image/modal/3.png">
+                    <div class="flex-col">
+                        <span>Groups</span>
+                        <p>Connect with people who share your interests.</p>
+                    </div>
+                </li>
+                <li class="flex-row">
+                    <img width="36" src="Image/modal/4.png">
+                    <div class="flex-col">
+                        <span>News Feed</span>
+                        <p>See relevant posts from people and Pages you follow.</p>
+                    </div>
+                </li>
+                <li class="flex-row">
+                    <img width="36" src="Image/modal/5.png">
+                    <div class="flex-col">
+                        <span>Favorites</span>
+                        <p>View posts by Favorites.</p>
+                    </div>
+                </li>
+            </div>
+            <div class="modal-create flex-col">
+                <span>Create</span>
+                <li class="flex-row">
+                    <div class="flex-row">
+                        <img width="22" src="Image/modal/6.png">
+                    </div>
+                    <span>Post</span>
+                </li>
+                <li class="flex-row">
+                    <div class="flex-row">
+                        <img width="22" src="Image/modal/7.png">
+                    </div>
+                    <span>Story</span>
+                </li>
+                <li class="flex-row">
+                    <div class="flex-row">
+                        <img width="22" src="Image/modal/8.png">
+                    </div>
+                    <span>Room</span>
+                </li>
+                <li class="flex-row">
+                    <div class="flex-row">
+                        <img width="22" src="Image/modal/9.png">
+                    </div>
+                    <span>Page</span>
+                </li>
+                <li class="flex-row">
+                    <div class="flex-row">
+                        <img width="22" src="Image/modal/10.png">
+                    </div>
+                    <span>Ad</span>
+                </li>
+                <li class="flex-row">
+                    <div class="flex-row">
+                        <img width="22" src="Image/modal/11.png">
+                    </div>
+                    <span>Group</span>
+                </li>
+                <li class="flex-row">
+                    <div class="flex-row">
+                        <img width="22" src="Image/modal/12.png">
+                    </div>
+                    <span>Event</span>
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="account-modal" id="account-modal">
+        <div class="account-info flex-col">
+            <div class="account-profile flex-row">
+                <div class="flex-row">
+                    <img width="44" src="https://i.pinimg.com/564x/85/b5/be/85b5bef005a9042df4b67eb666febfda.jpg">
+                </div>
+                <span>DeaDwiAryanti</span>
+            </div>
+            <hr>
+            <div class="flex-col">See all profiles</div>
+        </div>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="Image/modal/13.png">
+            </div>
+            <span>Settings & privacy</span>
+            <img width="24" src="Image/modal/18.png">
+        </li>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="Image/modal/14.png">
+            </div>
+            <span>Help & support</span>
+            <img width="24" src="Image/modal/18.png">
+        </li>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="Image/modal/15.png">
+            </div>
+            <span>Display & accessibility</span>
+            <img width="24" src="Image/modal/18.png">
+        </li>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="Image/modal/16.png">
+            </div>
+            <span>Give feedback</span>
+        </li>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="Image/modal/17.png">
+            </div>
+            <span>Log Out</span>
+        </li>
+    </div>
+
+</body>
+
+</html>
