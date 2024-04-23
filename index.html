@@ -57,6 +57,18 @@
             }
         }
 
+        $(document).ready(function() {
+            // Memasang event click pada elemen #gnb-menu
+            $('#gnb-menu').click(function() {
+                menuModal(); // Memanggil fungsi menuModal() saat tombol #gnb-menu ditekan
+            });
+
+            // Memasang event click pada elemen #profile-wrapper
+            $('#profile-wrapper').click(function() {
+                accountModal(); // Memanggil fungsi accountModal() saat elemen #profile-wrapper ditekan
+            });
+        });
+
         function searchMenu() {
             let searchText = $('#modal-search-input').val().toLowerCase();
             $('.social li').each(function() {
@@ -70,14 +82,28 @@
             });
         }
 
+        // Fungsi accountModal() di luar $(document).ready() untuk memastikan dapat diakses
         function accountModal() {
-            let status = $('#account-modal').css('display')
-            if (status == 'block') {
-                $('account-modal').hide()
+            let modal = $('#account-modal');
+
+            if (modal.css('display') === 'block') {
+                modal.hide();
             } else {
-                $('#account-modal').show()
+                modal.show();
             }
         }
+
+        $(document).ready(function() {
+            // Memasang event click pada elemen #gnb-menu
+            $('#gnb-menu').click(function() {
+                menuModal();
+            });
+
+            // Memasang event click pada elemen #profile-wrapper
+            $('#profile-wrapper').click(function() {
+                accountModal();
+            });
+        });
     </script>
 </head>
 
@@ -383,7 +409,7 @@
     <div class="account-modal" id="account-modal">
         <div class="account-info flex-col">
             <div class="account-profile flex-row">
-                <div class="flex-row">
+                <div id="profile-wrapper" class="flex-row">
                     <img width="44" src="https://i.pinimg.com/564x/85/b5/be/85b5bef005a9042df4b67eb666febfda.jpg">
                 </div>
                 <span>DeaDwiAryanti</span>
